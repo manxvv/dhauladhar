@@ -116,7 +116,7 @@ function SignUp() {
                   {...register("roleName", { required: "Role is required" })}
                   className="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-400"
                 />
-                <span className="ml-2 text-gray-700">User</span>
+                <span className="ml-2 text-gray-700">Student</span>
               </label>
               <label className="flex items-center">
                 <input

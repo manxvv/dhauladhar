@@ -7,6 +7,7 @@ const Urls = {
     signout: "/logout",
     refresh: "/refresh",
     roles: '/roles',
+    setpassword: '/setuppassword/stepOne'
 }
  
 

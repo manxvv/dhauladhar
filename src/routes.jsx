@@ -7,6 +7,7 @@ import Overview from './components/Overview';
 import useAuth from './store/useAuth';
 import Dashboard from "./components/Dashboard"
 import Profile from './components/Profile';
+import SetPassword from './components/SetPassword';
 
 function AuthRequired({ requiredRoles = [], children }) {
     const { user, authenticated } = useAuth()
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
     {
         path: '/overview',
         element: <Overview />,
+    },
+    {
+        path: '/password/:id',
+        element: <SetPassword />,
     },
     {
         path: '/',
