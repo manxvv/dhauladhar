@@ -1,8 +1,8 @@
 const Urls = {
-    baseURL: "http://192.168.29.50:8081",
-    imagebaseURL: "http://192.168.29.50:8081",
-    signin: "/login",
-    signup: "/register",
+baseURL:"http://localhost:5000",
+    // baseURL: "http://192.168.29.50:8081",
+    signin: "/api/auth/login",
+    signup: "/api/auth/register",
     getBCGCS: '/client/getBCGCS',
     signout: "/logout",
     refresh: "/refresh",

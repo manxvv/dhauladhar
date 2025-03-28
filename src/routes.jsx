@@ -11,11 +11,15 @@ import SetPassword from './components/SetPassword';
 
 function AuthRequired({ requiredRoles = [], children }) {
     const { user, authenticated } = useAuth()
+
+    console.log(user , authenticated , 'adsfdsafadsf')
     // const authenticated = !!user;
-    let rolePermitted = true;
+    let rolePermitted = false;
     if (requiredRoles.length) {
-        rolePermitted = requiredRoles.includes(user?.roleName);
+        rolePermitted = requiredRoles.includes(user?.role);
     }
+
+    console.log(user , authenticated ,rolePermitted , 'adsfdsafadsf')
     // console.log("user.role" , user?.roleName);   
     // if (rolePermitted) {
     //     return <Navigate to="/auth/not-autorized" />;
@@ -37,7 +41,7 @@ const router = createBrowserRouter([
         element: <ForgotPassword />,
     },
     {
-        path: '/overview',
+        path: '/',
         element: <Overview />,
     },
     {
@@ -45,11 +49,11 @@ const router = createBrowserRouter([
         element: <SetPassword />,
     },
     {
-        path: '/',
+        path: '/app/',
         element: (
-            <AuthRequired requiredRoles={["Admin", "Mentor","OT","Student"]}>
+            <AuthRequired requiredRoles={["Admin"]}>
                 <Layout />
-            </AuthRequired>
+             </AuthRequired>
         ),
         children: [
             {

@@ -1,4 +1,4 @@
-import axios from "axios";
+
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
@@ -16,14 +16,13 @@ function SignUp() {
   } = useForm();
 
   const { setLoading, setAuth , user, token} = useAuth();
-  console.log('user and token signup', user , token)
+
   const navigate = useNavigate();
 
   const signUpMutation = useMutation({
     mutationFn: (data) => http.post(Urls.signup, data),
     onSuccess: (data) => {
-      console.log(data, "sign up data:");
-      // navigate('/'); 
+     
     },
     onError: (error) => {
       console.log("Sign up failed: ", error);
@@ -46,32 +45,18 @@ function SignUp() {
             <label className="block mb-1 text-gray-700">Name</label>
             <input
               type="text"
-              {...register("firstName", { required: "Name is required" })}
+              {...register("name", { required: "Name is required" })}
               placeholder="Enter your name"
-              className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 ${errors.firstName ? "border-red-500" : "border-gray-300"
+              className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 ${errors.name ? "border-red-500" : "border-gray-300"
                 }`}
             />
-            {errors.firstName && (
-              <p className="mt-1 text-sm text-red-500">{errors.firstName.message}</p>
+            {errors.name && (
+              <p className="mt-1 text-sm text-red-500">{errors.name.message}</p>
             )}
           </div>
 
-          {/* Surname */}
-          <div className="mb-4">
-            <label className="block mb-1 text-gray-700">Surname</label>
-            <input
-              type="text"
-              {...register("surname", { required: "Surname is required" })}
-              placeholder="Enter your surname"
-              className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 ${errors.surname ? "border-red-500" : "border-gray-300"
-                }`}
-            />
-            {errors.surname && (
-              <p className="mt-1 text-sm text-red-500">
-                {errors.surname.message}
-              </p>
-            )}
-          </div>
+    
+      
 
           {/* Email */}
           <div className="mb-4">
@@ -90,50 +75,23 @@ function SignUp() {
 
           {/* Phone Number */}
           <div className="mb-4">
-            <label className="block mb-1 text-gray-700">Phone Number</label>
+            <label className="block mb-1 text-gray-700">Password</label>
             <input
-              type="tel"
-              {...register("phone", { required: "Phone number is required" })}
-              placeholder="Enter your phone number"
-              className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 ${errors.phone ? "border-red-500" : "border-gray-300"
+              type="password"
+              {...register("password", { required: "Password is required" })}
+              placeholder="Enter your password"
+              className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 ${errors.password ? "border-red-500" : "border-gray-300"
                 }`}
             />
-            {errors.phone && (
+            {errors.password && (
               <p className="mt-1 text-sm text-red-500">
-                {errors.phone.message}
+                {errors.password.message}
               </p>
             )}
           </div>
 
-          {/* Role */}
-          <div className="mb-4">
-            <label className="block mb-1 text-gray-700">Role</label>
-            <div className="flex items-center gap-4">
-              <label className="flex items-center">
-                <input
-                  type="radio"
-                  value="Student"
-                  {...register("roleName", { required: "Role is required" })}
-                  className="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-400"
-                />
-                <span className="ml-2 text-gray-700">Student</span>
-              </label>
-              <label className="flex items-center">
-                <input
-                  type="radio"
-                  value="Mentor"
-                  {...register("roleName", { required: "Role is required" })}
-                  className="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-400"
-                />
-                <span className="ml-2 text-gray-700">Mentor</span>
-              </label>
-            </div>
-            {errors.roleName && (
-              <p className="mt-1 text-sm text-red-500">{errors.roleName.message}</p>
-            )}
-          </div>
 
-          {/* Buttons */}
+
           <div className="flex justify-center">
 
             <button
