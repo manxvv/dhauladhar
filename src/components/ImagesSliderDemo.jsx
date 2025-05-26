@@ -4,6 +4,7 @@ import React from "react";
 import { ImagesSlider } from "./ui/images-slider";
 
 export function ImagesSliderDemo() {
+  
   const images = [
   '65bf85f94db29035a7f18fe8_RAAS Kangra Single Colunm 1 Image 1.webp' ,
   '7266c44c117245fa77a824c1ab0abd02.webp',
@@ -13,6 +14,7 @@ export function ImagesSliderDemo() {
   'Echor-Hill-Farm-Cottages-Palampur-1-1.jpg',
   'Echor-Hill-Farm-Cottages-Palampur-2-1.jpg' 
   ];
+
   return (
     <ImagesSlider className="h-[30rem]" images={images}>
       <motion.div

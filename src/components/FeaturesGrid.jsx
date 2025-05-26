@@ -8,12 +8,12 @@ const FeatureCard = ({ icon, title, description }) =>
     
     (
       
-  <div className="flex flex-col items-start bg-white p-6 shadow-xl rounded-2xl transition-transform transform hover:scale-105 border border-gray-100">
+  <div className="flex flex-col items-start bg-white p-6 shadow-xl rounded-2xl transition-transform transform hover:scale-105 border border-emerald-100">
     
     
-    <div className="text-blue-400 text-4xl mb-4">{icon}</div>
-    <h3 className="text-lg font-bold text-gray-800 mb-2">{title}</h3>
-    <p className="text-gray-500 leading-relaxed">{description}</p>
+    <div className="text-emerald-400 text-4xl mb-4">{icon}</div>
+    <h3 className="text-lg font-bold text-emerald-800 mb-2">{title}</h3>
+    <p className="text-emerald-500 leading-relaxed">{description}</p>
   </div>
 );
 
@@ -60,12 +60,12 @@ const FeaturesGrid = () => {
   
 
   return (
-    <div className="bg-blue-50 py-16">
+    <div className="bg-emerald-50 py-16">
       <div className="container mx-auto px-6 md:px-12">
-        <h2 className="text-3xl md:text-5xl font-extrabold text-gray-800 text-center mb-12">
+        <h2 className="text-3xl md:text-5xl font-extrabold text-emerald-800 text-center mb-12">
         </h2>
-        <h2 className="text-xl sm:text-2xl font-bold text-center mb-6 text-gray-800">
-        Features That <h2 className="text-blue-600 text-2xl">Elevate You and Boost Career 
+        <h2 className="text-xl sm:text-2xl font-bold text-center mb-6 text-emerald-800">
+        Features That <h2 className="text-emerald-600 text-2xl">Elevate You and Boost Career 
           </h2>
         </h2>
                            

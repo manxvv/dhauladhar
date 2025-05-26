@@ -22,21 +22,21 @@ const ProfileCard = ({ profile,onViewProfile }) => {
       {/* Name and Title */}
       <div className="text-center mt-4">
         <h2 className="text-xl font-semibold">{profile.name}</h2>
-        <p className="text-sm text-gray-500 font-medium">
+        <p className="text-sm text-emerald-500 font-medium">
           {profile.role} at{" "}
-          <span className="font-semibold text-gray-700">{profile.company}</span>
+          <span className="font-semibold text-emerald-700">{profile.company}</span>
         </p>
       </div>
 
       {/* Tags */}
-      <div className="text-center mt-2 text-sm text-blue-500 space-x-2">
+      <div className="text-center mt-2 text-sm text-emerald-500 space-x-2">
         {profile.tags.map((tag, index) => (
           <span key={index}>{tag}</span>
         ))}
       </div>
 
       {/* Description */}
-      <p className="text-gray-600 text-center mt-4 line-clamp-3">
+      <p className="text-emerald-600 text-center mt-4 line-clamp-3">
         {profile.description}
       </p>
 
@@ -45,7 +45,7 @@ const ProfileCard = ({ profile,onViewProfile }) => {
         {profile.skills.map((skill, index) => (
           <span
             key={index}
-            className="bg-gray-200 text-sm text-gray-700 py-1 px-3 rounded-full"
+            className="bg-emerald-200 text-sm text-emerald-700 py-1 px-3 rounded-full"
           >
             {skill}
           </span>
@@ -54,13 +54,13 @@ const ProfileCard = ({ profile,onViewProfile }) => {
 
       {/* Price and Button */}
       <div className="flex items-center justify-between mt-6">
-        <p className="text-gray-700 font-semibold">
+        <p className="text-emerald-700 font-semibold">
           Starting from{" "}
           <span className="text-lg text-black">${profile.price}</span>/month
         </p>
         <button         onClick={onViewProfile}
 
-        className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">
+        className="bg-emerald-500 text-white py-2 px-4 rounded-lg hover:bg-emerald-600">
 <Link to={`/profile/${profile.name}`}
                       
 >

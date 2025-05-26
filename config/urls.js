@@ -7,7 +7,8 @@ baseURL:"http://localhost:5000",
     signout: "/logout",
     refresh: "/refresh",
     roles: '/roles',
-    setpassword: '/setuppassword/stepOne'
+    setpassword: '/setuppassword/stepOne',
+    properties:'/api/properties',
 }
  
 

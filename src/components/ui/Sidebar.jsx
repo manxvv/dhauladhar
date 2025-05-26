@@ -128,7 +128,7 @@ export const SidebarLink = ({ link, className, ...props }) => {
       className={({ isActive }) =>
         cn(
           "flex items-center justify-start gap-2 group/sidebar py-2",
-          // isActive ? "bg-blue-700 rounded" : "hover:bg-blue-700 rounded",
+          // isActive ? "bg-emerald-700 rounded" : "hover:bg-emerald-700 rounded",
           className
         )
       }

@@ -244,7 +244,7 @@ const FormLanding = () => {
           <input
             type="text"
             {...register("name", { required: "Name is required" })}
-            className="w-full px-2 py-1 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-2 py-1 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
           />
           <p className="text-red-500 text-start text-xs min-h-[16px]">
             {errors.name?.message}
@@ -270,7 +270,7 @@ const FormLanding = () => {
               height: "36px",
             }}
             containerClass="w-full"
-            className="focus:ring-2 focus:ring-blue-500"
+            className="focus:ring-2 focus:ring-emerald-500"
           />
           <p className="text-red-500 text-start text-xs min-h-[16px]">
             {errors.mobile_number?.message}
@@ -285,7 +285,7 @@ const FormLanding = () => {
           <input
             type="email"
             {...register("email", { required: "Email is required" })}
-            className="w-full px-2 py-1 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-2 py-1 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
           />
           <p className="text-red-500 text-start text-xs min-h-[16px]">
             {errors.email?.message}
@@ -314,7 +314,7 @@ const FormLanding = () => {
         <div className="text-center">
           <button
             type="submit"
-            className="px-3 py-2 w-full sm:w-auto bg-blue-500 text-white rounded-lg hover:bg-blue-600 text-sm transition duration-200"
+            className="px-3 py-2 w-full sm:w-auto bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 text-sm transition duration-200"
           >
             Continue to Schedule
           </button>

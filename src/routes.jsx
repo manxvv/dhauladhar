@@ -1,3 +1,4 @@
+import React, { memo, useMemo } from 'react';
 import { createBrowserRouter, Navigate, Outlet } from 'react-router-dom';
 import Layout from './layout';
 import LoginForm from './components/Login';
@@ -5,29 +6,44 @@ import SignUp from './components/SignUp';
 import ForgotPassword from './components/ForgotPassword';
 import Overview from './components/Overview';
 import useAuth from './store/useAuth';
-import Dashboard from "./components/Dashboard"
+import Dashboard from "./components/Dashboard";
 import Profile from './components/Profile';
 import SetPassword from './components/SetPassword';
+import ListProperties from './components/ListProperties';
+import PropertiesPage from './components/PropertiesPage';
+import { SidebarDemo } from './components/SidebarComponent';
+import Contact from './components/Contact';
 
-function AuthRequired({ requiredRoles = [], children }) {
-    const { user, authenticated } = useAuth()
+// Memoize the AuthRequired component to prevent unnecessary rerenders
+const AuthRequired = memo(({ requiredRoles = [], children }) => {
+    const { user, authenticated } = useAuth();
+    
+    // Use useMemo to prevent recalculation of rolePermitted on each render
+    const rolePermitted = useMemo(() => {
+        if (!requiredRoles.length) return true;
+        return requiredRoles.includes(user?.role);
+    }, [user?.role, requiredRoles]);
 
-    console.log(user , authenticated , 'adsfdsafadsf')
-    // const authenticated = !!user;
-    let rolePermitted = false;
-    if (requiredRoles.length) {
-        rolePermitted = requiredRoles.includes(user?.role);
+    if (!authenticated) {
+        return <Navigate to="/auth/signup" />;
     }
+    
+    if (!rolePermitted) {
+        return <Navigate to="/auth/signup" />;
+    }
+    
+    return children;
+});
 
-    console.log(user , authenticated ,rolePermitted , 'adsfdsafadsf')
-    // console.log("user.role" , user?.roleName);   
-    // if (rolePermitted) {
-    //     return <Navigate to="/auth/not-autorized" />;
-    // }
-    return authenticated && rolePermitted ? children : <Navigate to="/auth/signup" />;
-}
+// Memoize the NotFound component
+const NotFound = memo(() => (
+    <div>
+        404 - Page Not Found. The requested URL does not exist.
+    </div>
+));
 
-const router = createBrowserRouter([
+// Create routes configuration outside the router creation
+const routesConfig = [
     {
         path: '/auth/login',
         element: <LoginForm />,
@@ -49,11 +65,19 @@ const router = createBrowserRouter([
         element: <SetPassword />,
     },
     {
+        path: '/properties',
+        element: <PropertiesPage />,
+    },
+        {
+        path: '/contact',
+        element: <Contact />,
+    },
+    {
         path: '/app/',
         element: (
             <AuthRequired requiredRoles={["Admin"]}>
-                <Layout />
-             </AuthRequired>
+                <SidebarDemo outlet={<Outlet />} />
+            </AuthRequired>
         ),
         children: [
             {
@@ -62,25 +86,23 @@ const router = createBrowserRouter([
             },
             {
                 path: 'dashboard',
-                element: <div>dashboard Details</div>,
+                element: <Dashboard />,
             },
             {
                 path: 'profile',
-                element: <Profile/>,
+                element: <Profile />,
             },
             {
                 path: 'setting',
                 element: <div>abc Details</div>,
             },
             {
-                path: 'assigned-mentors',
-                element: <div>assigned mentors Details</div>,
+                path: 'list-properties',
+                element: <ListProperties />,
             },
             {
                 path: 'available-courses',
-                element: <div>available
-                    courses
-                </div>,
+                element: <div>available courses</div>,
             },
             {
                 path: 'completed-courses',
@@ -90,17 +112,15 @@ const router = createBrowserRouter([
                 path: 'scheduled-classes',
                 element: <div>scheduled classsess Details</div>,
             },
-
         ],
     },
     {
         path: '*',
-        element: (
-            <div>
-                404 - Page Not Found. The requested URL: {window.location.pathname} does not exist.
-            </div>
-        ),
+        element: <NotFound />,
     },
-]);
+];
+
+// Create router with memoized routes
+const router = createBrowserRouter(routesConfig);
 
 export default router;

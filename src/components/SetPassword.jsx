@@ -47,7 +47,7 @@ const {id} = useParams();
       <form onSubmit={handleSubmit(onSubmit)}>
         {/* Password Field */}
         <div className="mb-4">
-          <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="password" className="block text-sm font-medium text-emerald-700">
             New Password
           </label>
           <input
@@ -61,7 +61,7 @@ const {id} = useParams();
               },
             })}
             className={`mt-1 block w-full p-2 border ${
-              errors.password ? "border-red-500" : "border-gray-300"
+              errors.password ? "border-red-500" : "border-emerald-300"
             } rounded`}
           />
           {errors.password && (
@@ -71,7 +71,7 @@ const {id} = useParams();
 
         {/* Confirm Password Field */}
         <div className="mb-4">
-          <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="confirmPassword" className="block text-sm font-medium text-emerald-700">
             Confirm Password
           </label>
           <input
@@ -83,7 +83,7 @@ const {id} = useParams();
                 value === password || "Passwords do not match",
             })}
             className={`mt-1 block w-full p-2 border ${
-              errors.confirmPassword ? "border-red-500" : "border-gray-300"
+              errors.confirmPassword ? "border-red-500" : "border-emerald-300"
             } rounded`}
           />
           {errors.confirmPassword && (
@@ -95,7 +95,7 @@ const {id} = useParams();
         <div>
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+            className="w-full bg-emerald-500 text-white py-2 px-4 rounded hover:bg-emerald-600"
             disabled={setPasswordMutation.isLoading}
           >
             {setPasswordMutation.isLoading ? "Setting Password..." : "Set Password"}

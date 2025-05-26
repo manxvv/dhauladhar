@@ -12,7 +12,7 @@ const Profile = () => {
         {[...new Array(4)].map((_, i) => (
           <div
             key={"first" + i}
-            className="h-20 w-full rounded-lg bg-gray-100 dark:bg-neutral-800 animate-pulse"
+            className="h-20 w-full rounded-lg bg-emerald-100 dark:bg-neutral-800 animate-pulse"
           ></div>
         ))}
       </div>
@@ -20,7 +20,7 @@ const Profile = () => {
         {[...new Array(2)].map((_, i) => (
           <div
             key={"second" + i}
-            className="h-full w-full rounded-lg bg-gray-100 dark:bg-neutral-800 animate-pulse"
+            className="h-full w-full rounded-lg bg-emerald-100 dark:bg-neutral-800 animate-pulse"
           ></div>
         ))}
       </div>

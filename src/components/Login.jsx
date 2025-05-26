@@ -42,15 +42,15 @@ function LoginForm() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 p-4">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-emerald-100 to-emerald-200 p-4">
       <div className="w-full max-w-md">
         <div className="bg-white shadow-2xl rounded-2xl overflow-hidden transform transition-all duration-300 hover:scale-105">
           <div className="p-8">
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gray-800 mb-2 tracking-tight">
+              <h2 className="text-3xl font-bold text-emerald-800 mb-2 tracking-tight">
                 Welcome Back
               </h2>
-              <p className="text-gray-500 text-sm">
+              <p className="text-emerald-500 text-sm">
                 Sign in to continue to your account
               </p>
             </div>
@@ -58,7 +58,7 @@ function LoginForm() {
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               {/* Email Field */}
               <div>
-                <label className="block mb-2 text-sm font-medium text-gray-700">
+                <label className="block mb-2 text-sm font-medium text-emerald-700">
                   Email Address
                 </label>
                 <div className="relative">
@@ -75,7 +75,7 @@ function LoginForm() {
                     className={`w-full px-4 py-3 border rounded-lg transition-all duration-300 
                       ${errors.email 
                         ? "border-red-500 ring-2 ring-red-100" 
-                        : "border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                        : "border-emerald-300 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
                       } outline-none`}
                   />
                   {errors.email && (
@@ -93,7 +93,7 @@ function LoginForm() {
 
               {/* Password Field */}
               <div>
-                <label className="block mb-2 text-sm font-medium text-gray-700">
+                <label className="block mb-2 text-sm font-medium text-emerald-700">
                   Password
                 </label>
                 <div className="relative">
@@ -110,13 +110,13 @@ function LoginForm() {
                     className={`w-full px-4 py-3 border rounded-lg transition-all duration-300 pr-10
                       ${errors.password 
                         ? "border-red-500 ring-2 ring-red-100" 
-                        : "border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                        : "border-emerald-300 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
                       } outline-none`}
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600"
+                    className="absolute inset-y-0 right-0 pr-3 flex items-center text-emerald-400 hover:text-emerald-600"
                   >
                     {showPassword ? (
                       <EyeOff className="h-5 w-5" />
@@ -136,16 +136,16 @@ function LoginForm() {
                   <input
                     type="checkbox"
                     id="remember-me"
-                    className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                    className="h-4 w-4 text-emerald-600 focus:ring-emerald-500 border-emerald-300 rounded"
                   />
-                  <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
+                  <label htmlFor="remember-me" className="ml-2 block text-sm text-emerald-900">
                     Remember me
                   </label>
                 </div>
                 <div>
                   <Link
                     to="/forgot-password"
-                    className="text-sm text-blue-600 hover:text-blue-500 transition-colors"
+                    className="text-sm text-emerald-600 hover:text-emerald-500 transition-colors"
                   >
                     Forgot Password?
                   </Link>
@@ -157,8 +157,8 @@ function LoginForm() {
                 type="submit"
                 className="w-full flex justify-center py-3 px-4 border border-transparent 
                   rounded-lg shadow-sm text-sm font-medium text-white 
-                  bg-blue-600 hover:bg-blue-700 focus:outline-none 
-                  focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 
+                  bg-emerald-600 hover:bg-emerald-700 focus:outline-none 
+                  focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 
                   transition-all duration-300 ease-in-out transform 
                   active:scale-95"
               >
@@ -168,11 +168,11 @@ function LoginForm() {
 
             {/* Signup Link */}
             {/* <div className="mt-6 text-center">
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-emerald-600">
                 Don't have an account?{" "}
                 <Link
                   to="/auth/signup"
-                  className="font-medium text-blue-600 hover:text-blue-500 transition-colors"
+                  className="font-medium text-emerald-600 hover:text-emerald-500 transition-colors"
                 >
                   Sign Up
                 </Link>

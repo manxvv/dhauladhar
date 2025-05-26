@@ -29,49 +29,16 @@ export function SidebarDemo({ outlet }) {
       ),
     },
     {
-      label: "Assigned Mentors",
-      href: "assigned-mentors",
+      label: "List Properties",
+      href: "list-properties",
       icon: (
         <IconBubbleText className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     },
 
-    {
-      label: "Available Courses",
-      href: "available-courses",
-      icon: (
-        <IconLibrary className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-      ),
-    },
-
-    {
-      label: "Completed Courses",
-      href: "completed-courses",
-      icon: (
-        <IconChartAreaLine className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-      ),
-    },
-    {
-      label: "Scheduled Classes",
-      href: "scheduled-classes",
-      icon: (
-        <IconSchool className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-      ),
-    },
-    {
-      label: "Profile",
-      href: "profile",
-      icon: (
-        <IconUserBolt className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-      ),
-    },
-    {
-      label: "Settings",
-      href: "setting",
-      icon: (
-        <IconSettings className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-      ),
-    },
+  
+   
+    
     {
       label: "Logout",
       // href: "logout",
@@ -94,7 +61,7 @@ export function SidebarDemo({ outlet }) {
         "rounded-md flex flex-col md:flex-row bg-gray-100 dark:bg-neutral-800 w-full flex-1 max-w-7xl mx-auto border border-neutral-200 dark:border-neutral-700 overflow-hidden h-full"
       )}
     >
-      <Sidebar open={open} setOpen={setOpen} animate={true}>
+      <Sidebar open={open} setOpen={setOpen} animate={false}>
         <SidebarBody className="justify-between gap-10">
           <div className="flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
             <>

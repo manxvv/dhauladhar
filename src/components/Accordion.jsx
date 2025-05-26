@@ -18,13 +18,13 @@ const Accordion = () => {
   };
 
   return (
-    <div className="bg-gray-900 w-[70%] rounded-lg mt-10 text-white mx-auto my-10 py-12 px-4 sm:px-8">
+    <div className="bg-emerald-900 w-[70%] rounded-lg mt-10 text-white mx-auto my-10 py-12 px-4 sm:px-8">
       <div className="max-w-4xl mx-auto">
         {/* Heading */}
         <h2 className="text-center text-2xl font-bold mb-4">
           Frequently Asked Questions
         </h2>
-        <p className="text-center text-gray-400 mb-8">
+        <p className="text-center text-emerald-400 mb-8">
           Find answers to commonly asked questions about Long Term Mentorship
         </p>
 
@@ -33,14 +33,14 @@ const Accordion = () => {
           {questions.map((question, index) => (
             <div
               key={index}
-              className="bg-gray-800 rounded-lg overflow-hidden"
+              className="bg-emerald-800 rounded-lg overflow-hidden"
             >
               <button
                 onClick={() => toggleAccordion(index)}
                 className="w-full flex justify-between items-center p-4 text-left focus:outline-none"
               >
                 <span className="text-sm sm:text-base">{question}</span>
-                <span className="text-gray-400">
+                <span className="text-emerald-400">
                   {activeIndex === index ? (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +75,7 @@ const Accordion = () => {
 
               {/* Accordion Content */}
               {activeIndex === index && (
-                <div className="bg-gray-700 text-gray-300 p-4 text-sm sm:text-base">
+                <div className="bg-emerald-700 text-emerald-300 p-4 text-sm sm:text-base">
                   This is the answer for: {question}. You can customize this
                   content with actual answers.
                 </div>

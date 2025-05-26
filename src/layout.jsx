@@ -1,11 +1,15 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
-import { SidebarDemo } from "./components/SidebarComponent";
+import React from 'react';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
-const Layout = () => {
+const Layout = ({ children }) => {
   return (
-    <div className="flex h-full">
-      <SidebarDemo outlet={<Outlet />} />
+    <div className="bg-white min-h-screen flex flex-col">
+      <Navbar />
+      <main className="flex-grow">
+        {children}
+      </main>
+      <Footer />
     </div>
   );
 };

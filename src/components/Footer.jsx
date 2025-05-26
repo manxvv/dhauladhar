@@ -62,18 +62,18 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="flex flex-wrap items-center justify-between text-sm">
-          <p className="text-gray-200">
+          <p className="text-emerald-200">
             Copyright © 2025 Dhauladhar Estate Realty Pvt. Ltd. All rights reserved.
           </p>
           <div className="flex gap-4">
             {/* Social Icons */}
-            <a href="#" className="text-gray-200 hover:text-white transition">
+            <a href="#" className="text-emerald-200 hover:text-white transition">
               <FaFacebook size={20}/>
             </a>
-            <a href="#" className="text-gray-200 hover:text-white transition">
+            <a href="#" className="text-emerald-200 hover:text-white transition">
               <FaYoutube size={20}/>
             </a>
-            <a href="#" className="text-gray-200 hover:text-white transition">
+            <a href="#" className="text-emerald-200 hover:text-white transition">
               <AiFillInstagram size={20}/>
             </a>
           </div>

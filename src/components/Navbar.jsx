@@ -12,7 +12,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white font-semibold h-fit w-full shadow-md fixed top-0 z-50">
+    <nav className="bg-white font-bold h-fit w-full shadow-md fixed top-0 z-50">
       <div className="mx-auto px-4 md:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
@@ -22,8 +22,8 @@ const Navbar = () => {
           </div>
 
           {/* Menu Items (Desktop) */}
-          <ul className="hidden md:flex space-x-8 text-gray-700">
-            <Link to="/home">
+          <ul className="hidden md:flex space-x-8 text-emerald-700">
+            <Link to="/">
               <li className="cursor-pointer hover:text-emerald-600 transition duration-300">
                 Home
               </li>
@@ -33,11 +33,11 @@ const Navbar = () => {
                 Properties
               </li>
             </Link>
-            <Link to="/plots">
+            {/* <Link to="/plots">
               <li className="cursor-pointer hover:text-emerald-600 transition duration-300">
                 Plots
               </li>
-            </Link>
+            </Link> */}
             <Link to="/contact">
               <li className="cursor-pointer hover:text-emerald-600 transition duration-300">
                 Contact
@@ -60,7 +60,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="md:hidden text-gray-700 focus:outline-none"
+            className="md:hidden text-emerald-700 focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
           >
             <svg
@@ -83,34 +83,34 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden py-3">
-            <ul className="space-y-4 text-gray-700">
-              <Link to="/home">
-                <li className="block cursor-pointer hover:text-emerald-600 py-2 px-3 hover:bg-gray-50 rounded transition duration-300">
+            <ul className="space-y-4 text-emerald-700">
+              <Link to="/">
+                <li className="block cursor-pointer hover:text-emerald-600 py-2 px-3 hover:bg-emerald-50 rounded transition duration-300">
                   Home
                 </li>
               </Link>
               <Link to="/properties">
-                <li className="block cursor-pointer hover:text-emerald-600 py-2 px-3 hover:bg-gray-50 rounded transition duration-300">
+                <li className="block cursor-pointer hover:text-emerald-600 py-2 px-3 hover:bg-emerald-50 rounded transition duration-300">
                   Properties
                 </li>
               </Link>
               <Link to="/services">
-                <li className="block cursor-pointer hover:text-emerald-600 py-2 px-3 hover:bg-gray-50 rounded transition duration-300">
+                <li className="block cursor-pointer hover:text-emerald-600 py-2 px-3 hover:bg-emerald-50 rounded transition duration-300">
                   Services
                 </li>
               </Link>
               <Link to="/agents">
-                <li className="block cursor-pointer hover:text-emerald-600 py-2 px-3 hover:bg-gray-50 rounded transition duration-300">
+                <li className="block cursor-pointer hover:text-emerald-600 py-2 px-3 hover:bg-emerald-50 rounded transition duration-300">
                   Our Agents
                 </li>
               </Link>
               <Link to="/testimonials">
-                <li className="block cursor-pointer hover:text-emerald-600 py-2 px-3 hover:bg-gray-50 rounded transition duration-300">
+                <li className="block cursor-pointer hover:text-emerald-600 py-2 px-3 hover:bg-emerald-50 rounded transition duration-300">
                   Testimonials
                 </li>
               </Link>
               <Link to="/contact">
-                <li className="block cursor-pointer hover:text-emerald-600 py-2 px-3 hover:bg-gray-50 rounded transition duration-300">
+                <li className="block cursor-pointer hover:text-emerald-600 py-2 px-3 hover:bg-emerald-50 rounded transition duration-300">
                   Contact
                 </li>
               </Link>
